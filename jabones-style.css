@@ -1,0 +1,828 @@
+/* Variables CSS para Colores Neutros y Naturales */
+:root {
+    /* ... (Variables existentes) ... */
+    --primary-color: #b0bfb5; 
+    --secondary-color: #85b595; 
+    --accent-color: #d4f4ad; 
+    --text-color: #82bd8a; 
+    --light-bg: #F5F5DC; 
+    --dark-bg: #3d7328; 
+    --white: #ffffff;
+
+    --font-heading: 'Merriweather', serif;
+    --font-body: 'Lato', sans-serif;
+    /* Colores para las tarjetas nuevas */
+    --card-bg: var(--white);
+    --card-overlay: var(--accent-color);
+
+    /* Variables añadidas para la tarjeta de cookies */
+    --cookie-card-bg: var(--white);
+    --cookie-title-color: var(--text-color);
+    --cookie-description-color: var(--secondary-color);
+    --cookie-link-color: var(--primary-color);
+    --cookie-btn-pref-color: var(--text-color);
+    --cookie-btn-accept-bg: var(--primary-color);
+    --cookie-btn-accept-color: var(--white);
+}
+
+/* ================================================= */
+/* ESTILOS DEL LOADER SVG */
+/* ================================================= */
+
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-bg); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    width: 8em;
+    height: 8em;
+}
+
+.loader__eye1,
+.loader__eye2,
+.loader__mouth1,
+.loader__mouth2 {
+    animation: eye1 3s ease-in-out infinite;
+}
+
+.loader__eye1,
+.loader__eye2 {
+    transform-origin: 64px 64px;
+}
+
+.loader__eye2 {
+    animation-name: eye2;
+}
+
+.loader__mouth1 {
+    animation-name: mouth1;
+}
+
+.loader__mouth2 {
+    animation-name: mouth2;
+    visibility: hidden;
+}
+
+@keyframes eye1 {
+    from {
+        transform: rotate(-260deg) translate(0, -56px);
+    }
+    50%, 60% {
+        animation-timing-function: cubic-bezier(0.17, 0, 0.58, 1);
+        transform: rotate(-40deg) translate(0, -56px) scale(1);
+    }
+    to {
+        transform: rotate(225deg) translate(0, -56px) scale(0.35);
+    }
+}
+
+@keyframes eye2 {
+    from {
+        transform: rotate(-260deg) translate(0, -56px);
+    }
+    50% {
+        transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
+    }
+    52.5% {
+        transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1, 0);
+    }
+    55%, 70% {
+        animation-timing-function: cubic-bezier(0, 0, 0.28, 1);
+        transform: rotate(40deg) translate(0, -56px) rotate(-40deg) scale(1);
+    }
+    to {
+        transform: rotate(150deg) translate(0, -56px) scale(0.4);
+    }
+}
+
+@keyframes mouth1 {
+    from {
+        animation-timing-function: ease-in;
+        stroke-dasharray: 0 351.86;
+        stroke-dashoffset: 0;
+    }
+    25% {
+        animation-timing-function: ease-out;
+        stroke-dasharray: 175.93 351.86;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        animation-timing-function: steps(1, start);
+        stroke-dasharray: 175.93 351.86;
+        stroke-dashoffset: -175.93;
+        visibility: visible;
+    }
+    75%, to {
+        visibility: hidden;
+    }
+}
+
+@keyframes mouth2 {
+    from {
+        animation-timing-function: steps(1, end);
+        visibility: hidden;
+    }
+    50% {
+        animation-timing-function: ease-in-out;
+        visibility: visible;
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: -351.86;
+    }
+}
+
+/* ================================================= */
+/* ESTILOS GENERALES DE LA PÁGINA */
+/* ================================================= */
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+#main-content {
+    transition: opacity 0.5s ease;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    /* Color predeterminado para otros títulos (excepto .hero h1) */
+    color: var(--primary-color); 
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    color: var(--white);
+    margin-bottom: 40px;
+}
+
+/* Header - Hero Section */
+.hero {
+    /* Fondo con imagen local */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fondo.jpeg') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+/* Título BRILLA BAR en blanco */
+.hero h1 {
+    color: var(--white); 
+    font-size: 4em; /* Opcional: Aumentar el tamaño para el hero */
+}
+
+/* Ajuste específico para el contenido del hero para alinear a la izquierda */
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los ítems a la izquierda */
+    text-align: left; /* Alinea el texto a la izquierda */
+    max-width: 1000px; 
+    width: 100%; 
+}
+
+.hero h1, .hero p {
+    text-align: left; 
+    width: 100%;
+}
+
+
+/* Sección de Productos y Contacto */
+section {
+    padding: 80px 0;
+    text-align: center; 
+}
+
+section:nth-of-type(even) {
+    background-color: var(--white);
+}
+
+.contact-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.contact-section h2 {
+    color: var(--white);
+}
+
+/* ================================================= */
+/* ESTILOS DE LA SECCIÓN DE PRODUCTOS (NUEVAS TARJETAS) */
+/* ================================================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Estilos para la Nueva Tarjeta Interactiva (.card) */
+.card {
+    position: relative;
+    width: 100%; 
+    height: 380px; 
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card-img {
+    width: 100%;
+    height: 60%; 
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    transition: opacity 0.5s ease;
+}
+
+.card-content {
+    padding: 15px;
+    height: 40%;
+    text-align: center;
+    color: var(--text-color);
+    background-color: var(--white);
+    z-index: 5; 
+    width: 100%;
+    box-sizing: border-box;
+    transition: opacity 0.5s ease;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.3em;
+}
+
+/* Pseudo-elementos para el efecto de HOVER */
+.card::before,
+.card::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--card-overlay); 
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); 
+    z-index: 10;
+    text-transform: none; /* Quitamos uppercase para mejor lectura */
+    letter-spacing: normal;
+    padding: 10px; /* Añadimos padding para el texto largo */
+    box-sizing: border-box;
+    pointer-events: none; 
+}
+
+/* Esquina superior derecha */
+.card::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+    content: "¡Ver Más!"; 
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Esquina inferior izquierda */
+.card::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 15px;
+    content: "";
+}
+
+/* Efecto al hacer hover */
+.card:hover::before,
+.card:hover::after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.card:hover::before {
+    /* **CAMBIO CLAVE: Usa el atributo data-full-description** */
+    content: attr(data-full-description); 
+    font-size: 1.1em; /* Reducimos la fuente para que quepa la descripción */
+    font-weight: 400; /* Fuente normal para mejor lectura del texto */
+    line-height: 1.5;
+    white-space: pre-wrap; /* Permite saltos de línea y formateo dentro del contenido */
+    text-align: center;
+}
+
+.card:hover::after {
+    content: ""; 
+    opacity: 0; 
+}
+
+/* Ocultamos el contenido original al hacer hover */
+.card:hover .card-content, .card:hover .card-img {
+    opacity: 0;
+}
+
+/* ================================================= */
+/* ESTILOS DEL FORMULARIO DE PEDIDO ESTILIZADO */
+/* ================================================= */
+
+.form-container {
+    max-width: 450px; 
+    height: auto; 
+    padding: 30px; 
+    
+    background-color: var(--light-bg);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 40px auto 0;
+}
+
+.form-container .title {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin: 0 0 30px 0;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.input {
+    border-radius: 20px;
+    border: 1px solid var(--secondary-color);
+    outline: 0 !important;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    font-family: var(--font-body);
+    font-size: 1em;
+}
+
+.textarea {
+    min-height: 120px;
+    resize: vertical;
+    padding: 15px; 
+}
+
+.page-link {
+    margin: 0;
+    text-align: center;
+    color: var(--secondary-color);
+    text-decoration: none; 
+}
+
+.page-link-label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.form-btn {
+    padding: 12px 15px;
+    font-family: var(--font-body);
+    font-weight: bold;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: var(--accent-color);
+    color: var(--white);
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: background-color 0.3s ease;
+}
+
+.form-btn:active {
+    box-shadow: none;
+}
+
+.sign-up-label {
+    margin: 0;
+    font-size: 10px;
+    color: var(--secondary-color);
+    font-family: var(--font-body);
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Eliminamos los elementos de login/registro no usados */
+.buttons-container, .sign-up-link {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9em;
+}
+
+/* ================================================= */
+/* ESTILOS DE LA TARJETA DE AVISO DE COOKIES */
+/* ================================================= */
+
+.cookie-card {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px;
+  max-width: 320px;
+  padding: 1rem;
+  background-color: var(--cookie-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+  z-index: 100; 
+  font-family: var(--font-body);
+}
+
+.cookie-card .title {
+  font-weight: 700;
+  color: var(--cookie-title-color);
+  font-size: 1.1em;
+}
+
+.cookie-card .description {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--cookie-description-color);
+}
+
+.cookie-card .description a {
+  color: var(--cookie-link-color);
+  text-decoration: underline;
+}
+
+.cookie-card .description a:hover {
+  text-decoration-line: none;
+}
+
+.cookie-card .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.cookie-card .pref {
+  font-size: 0.85rem;
+  line-height: 1rem;
+  color: var(--cookie-btn-pref-color);
+  text-decoration: underline;
+  transition: all .3s ease;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.cookie-card .pref:hover {
+  color: var(--secondary-color);
+}
+
+.cookie-card .pref:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.cookie-card .accept {
+  font-size: 0.85rem;
+  line-height: 1rem;
+  background-color: var(--cookie-btn-accept-bg);
+  font-weight: 700;
+  border-radius: 5px;
+  color: var(--cookie-btn-accept-color);
+  padding: 0.75rem 1.25rem;
+  border: none;
+  transition: all .15s ease;
+  cursor: pointer;
+}
+
+.cookie-card .accept:hover {
+  background-color: var(--text-color); 
+}
+
+.cookie-card .accept:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ================================================= */
+/* ESTILOS DEL BOTÓN INTERACTIVO (CON ALINEACIÓN A LA IZQUIERDA) */
+/* ================================================= */
+
+.type--C {
+  --line_color: var(--primary-color);
+  --back_color: var(--light-bg);
+}
+.button {
+  position: relative;
+  z-index: 0;
+  width: 240px;
+  height: 56px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--line_color);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  margin-top: 20px; 
+  /* CAMBIOS CLAVE PARA ALINEAR A LA IZQUIERDA */
+  margin-right: auto; 
+  margin-left: 0;
+}
+.button__text {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase; 
+}
+.button::before,
+.button::after,
+.button__text::before,
+.button__text::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line_color);
+  transition: all 0.5s ease;
+}
+.button::before {
+  top: 0;
+  left: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button::after {
+  top: 0;
+  right: 54px;
+  width: 8px;
+}
+.button__text::before {
+  bottom: 0;
+  right: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button__text::after {
+  bottom: 0;
+  left: 54px;
+  width: 8px;
+}
+.button__line {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  overflow: hidden;
+}
+.button__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 300px;
+  border: solid 3px var(--line_color);
+}
+.button__line:nth-child(1),
+.button__line:nth-child(1)::before {
+  left: 0;
+}
+.button__line:nth-child(2),
+.button__line:nth-child(2)::before {
+  right: 0;
+}
+.button:hover {
+  letter-spacing: 6px;
+}
+.button:hover::before,
+.button:hover .button__text::before {
+  width: 8px;
+}
+.button:hover::after,
+.button:hover .button__text::after {
+  width: calc(100% - 56px * 2 - 16px);
+}
+.button__drow1,
+.button__drow2 {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+}
+.button__drow1 {
+  top: -16px;
+  left: 40px;
+  width: 32px;
+  height: 0;
+  transform: rotate(30deg);
+}
+.button__drow2 {
+  top: 44px;
+  left: 77px;
+  width: 32px;
+  height: 0;
+  transform: rotate(-127deg);
+}
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2::before,
+.button__drow2::after {
+  content: "";
+  position: absolute;
+}
+.button__drow1::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-60deg);
+}
+.button__drow1::after {
+  top: -10px;
+  left: 45px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(69deg);
+}
+.button__drow2::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-146deg);
+}
+.button__drow2::after {
+  bottom: 26px;
+  left: -40px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-262deg);
+}
+.button__drow1,
+.button__drow1::before,
+.button__drow1::after,
+.button__drow2,
+.button__drow2::before,
+.button__drow2::after {
+  background: var(--back_color);
+}
+.button:hover .button__drow1 {
+  animation: drow1 ease-in 0.06s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow1::before {
+  animation: drow2 linear 0.08s 0.06s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow1::after {
+  animation: drow3 linear 0.03s 0.14s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2 {
+  animation: drow4 linear 0.06s 0.2s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2::before {
+  animation: drow3 linear 0.03s 0.26s;
+  animation-fill-mode: forwards;
+}
+.button:hover .button__drow2::after {
+  animation: drow5 linear 0.06s 0.32s;
+  animation-fill-mode: forwards;
+}
+@keyframes drow1 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100px;
+  }
+}
+@keyframes drow2 {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  11% {
+    opacity: 1;
+  }
+  100% {
+    width: 120px;
+  }
+}
+@keyframes drow3 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80px;
+  }
+}
+@keyframes drow4 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 120px;
+  }
+}
+@keyframes drow5 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 124px;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* En pantallas pequeñas, centramos el contenido para mejor UX */
+    .hero .container {
+        align-items: center;
+        text-align: center;
+    }
+    .hero h1, .hero p {
+        text-align: center;
+    }
+    .button {
+        /* Vuelve a centrar el botón en el contenedor Flex para dispositivos móviles */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero h1 { font-size: 3em; }
+    .product-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .form-container { max-width: 90%; }
+    .cookie-card { 
+        bottom: 10px; 
+        left: 10px; 
+        right: 10px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero { padding: 60px 15px; min-height: 350px; }
+    .hero h1 { font-size: 2.5em; }
+    .form-container { padding: 20px 15px; }
+    .product-grid { grid-template-columns: 1fr; }
+}

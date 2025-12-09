@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brilla Bar- Jabones Artesanales</title>
+    <link rel="stylesheet" href="jabones-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader-wrapper">
+        <div>
+            <svg height="108px" width="108px" viewBox="0 0 128 128" class="loader">
+                <defs>
+                    <clipPath id="loader-eyes-jabon">
+                        <circle transform="rotate(-40,64,64) translate(0,-56)" r="8" cy="64" cx="64" class="loader__eye1"></circle>
+                        <circle transform="rotate(40,64,64) translate(0,-56)" r="8" cy="64" cx="64" class="loader__eye2"></circle>
+                    </clipPath>
+                    <linearGradient y2="1" x2="0" y1="0" x1="0" id="loader-grad-jabon">
+                        <stop stop-color="#000" offset="0%"></stop>
+                        <stop stop-color="#fff" offset="100%"></stop>
+                    </linearGradient>
+                    <mask id="loader-mask-jabon">
+                        <rect fill="url(#loader-grad-jabon)" height="128" width="128" y="0" x="0"></rect>
+                    </mask>
+                </defs>
+                <g stroke-dasharray="175.93 351.86" stroke-width="12" stroke-linecap="round">
+                    <g>
+                        <rect clip-path="url(#loader-eyes-jabon)" height="64" width="128" fill="hsl(20, 30%, 50%)"></rect>
+                        <g stroke="hsl(20, 30%, 50%)" fill="none">
+                            <circle transform="rotate(180,64,64)" r="56" cy="64" cx="64" class="loader__mouth1"></circle>
+                            <circle transform="rotate(0,64,64)" r="56" cy="64" cx="64" class="loader__mouth2"></circle>
+                        </g>
+                    </g>
+                    <g mask="url(#loader-mask-jabon)">
+                        <rect clip-path="url(#loader-eyes-jabon)" height="64" width="128" fill="hsl(80, 50%, 50%)"></rect>
+                        <g stroke="hsl(80, 50%, 50%)" fill="none">
+                            <circle transform="rotate(180,64,64)" r="56" cy="64" cx="64" class="loader__mouth1"></circle>
+                            <circle transform="rotate(0,64,64)" r="56" cy="64" cx="64" class="loader__mouth2"></circle>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <main id="main-content" style="opacity: 0;">
+        <header class="hero">
+            <div class="container">
+                <h1>BRILLA BAR</h1>
+                <p>tu mejor version empieza en tu cabello</p>
+                
+                <a href="#productos" class="button type--C">
+                    <div class="button__line"></div>
+                    <div class="button__line"></div>
+                    <span class="button__text">VER JABONES</span>
+                    <div class="button__drow1"></div>
+                    <div class="button__drow2"></div>
+                </a>
+                </div>
+        </header>
+
+        <section id="nosotros" class="about-section">
+            <div class="container">
+                <h2>Nuestra Filosofía</h2>
+                <p>Nuestra misión es la Nutrición Genuina, eligiendo solo extractos botánicos potentes y sin rellenos sintéticos. Rechazamos los químicos para ofrecer una belleza limpia y honesta. Cada barra es un compromiso con tu salud capilar y con la pureza de la Tierra.</p>
+            </div>
+        </section>
+
+        <section id="productos" class="products-section">
+            <div class="container">
+                <h2>Nuestra Colección de Olores</h2>
+                <div class="product-grid">
+                    
+                    <div class="card product-item" data-full-description="Shampoo sólido con delicado extracto de Té Blanco. Ofrece una limpieza suave, antioxidante y relajante, dejando el cabello ligero y con un sutil aroma fresco y elegante.">
+                        <img src="jabon_blanco.jpeg" alt="Jabón de Lavanda" class="card-img">
+                        <div class="card-content">
+                            <h3>Té Blanco</h3>
+                            </div>
+                    </div>
+
+                    <div class="card product-item" data-full-description="Shampoo sólido formulado con granos de Café. Ofrece una limpieza estimulante que ayuda a fortalecer y dar brillo, despertando tu cabello con un aroma profundo y energizante.">
+                        <img src="jabon _cafe.jpeg" alt="Jabón Cítrico" class="card-img">
+                        <div class="card-content">
+                            <h3>Cafe</h3>
+                            </div>
+                    </div>
+
+                    <div class="card product-item" data-full-description="Shampoo sólido con esencia marina que evoca la brisa del mar. Limpieza refrescante que deja tu cabello ligero y con un aroma puro y revitalizante.">
+                        <img src="jabon_azul.jpeg" alt="Jabón de Menta" class="card-img">
+                        <div class="card-content">
+                            <h3>Olor Marino</h3>
+                            </div>
+                    </div>
+
+                    <div class="card product-item" data-full-description="Barra de shampoo sólido con la dulce y suave esencia del Melocotón. Proporciona nutrición e hidratación, dejando tu cabello sedoso, manejable y con un aroma exquisito y afrutado.">
+                        <img src="jabon_melocoton.jpeg" alt="Jabón de Rosas" class="card-img">
+                        <div class="card-content">
+                            <h3>Melocoton</h3>
+                            </div>
+                    </div>
+
+                    <div class="card product-item" data-full-description="Barra de shampoo sólido infusionada con el aroma floral y sutil de las Flores de Violeta. Limpieza nutritiva que calma el cuero cabelludo y envuelve tu cabello en una fragancia delicada y romántica.">
+                        <img src="jabon_morado.jpeg" alt="Jabón de Avena" class="card-img">
+                        <div class="card-content">
+                            <h3>Flores De Violet</h3>
+                            </div>
+                    </div>
+
+                    <div class="card product-item" data-full-description="Barra de shampoo sólido con la esencia vibrante de la Bergamota. Aporta frescura cítrica y brillo natural, revitalizando tu cabello con un toque de energía mediterránea.">
+                        <img src="jabon_verde.jpeg" alt="Jabón de Eucalipto" class="card-img">
+                        <div class="card-content">
+                            <h3>Bergamota</h3>
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="pedido" class="contact-section">
+            <div class="container">
+                
+                <h2>Haz Tu Pedido Personalizado</h2>
+                <p class="section-subtitle">Completa el formulario y te contactaremos para coordinar tu compra.</p>
+
+                <div class="form-container">
+                    <p class="title">Solicitud de Jabones</p>
+                    
+                    <form action="https://formspree.io/f/xjknepae" method="POST" class="form">
+                        <input type="text" name="name" class="input" placeholder="Tu Nombre" required>
+                        <input type="email" name="email" class="input" placeholder="Correo Electrónico" required> 
+                        <input type="tel" name="phone" class="input" placeholder="Teléfono (Opcional)"> 
+                        
+                        <textarea name="message" class="input textarea" placeholder="¿Qué jabones te interesan y cuántos? ¿Algún aroma especial?" required></textarea>
+                        
+                        <p class="page-link">
+                            <span class="page-link-label">Responderemos en un máximo de 48 horas</span>
+                        </p>
+                        
+                        <button type="submit" class="form-btn">Enviar Solicitud de Pedido</button>
+                    </form>
+                    
+                    <p class="sign-up-label">
+                        Si ya eres cliente, puedes usar tus datos de contacto para hacer un seguimiento.
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Brilla Bar. Todos los derechos reservados.</p>
+                <p>Contacto: info@Brillabar.com | Tel: +54 311-104-3739
+            </div>
+        </footer>
+    </main>
+
+    <div class="cookie-card" id="cookieCard">
+      <span class="title">🍪 Aviso de Cookies</span>
+      <p class="description">Utilizamos cookies para asegurar que te proporcionemos la mejor experiencia en nuestro sitio web. <a href="#">Ver política de cookies</a>. </p>
+      <div class="actions">
+          <button class="pref">
+              Gestionar preferencias
+          </button>
+          <button class="accept" id="acceptCookiesBtn">
+              Aceptar
+          </button>
+      </div>
+    </div>
+    <script>
+        // Inicialización del Loader
+        window.addEventListener('load', function() {
+            const loaderWrapper = document.getElementById('loader-wrapper');
+            const mainContent = document.getElementById('main-content');
+            
+            mainContent.style.opacity = '1';
+
+            loaderWrapper.style.opacity = '0';
+
+            setTimeout(function() {
+                loaderWrapper.style.display = 'none';
+            }, 500); 
+        });
+
+        // Funcionalidad de Cookies
+        const cookieCard = document.getElementById('cookieCard');
+        const acceptButton = document.getElementById('acceptCookiesBtn');
+
+        if (acceptButton && cookieCard) {
+            acceptButton.addEventListener('click', function() {
+                // Oculta la tarjeta de cookies
+                cookieCard.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
